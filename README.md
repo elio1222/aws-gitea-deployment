@@ -17,6 +17,8 @@ mkdir -p ~/data
 sudo mount /dev/nvme1n1 ~/data
 df -h
 ```
+ALMOST FORGOT I ALSO CHANGED THE OWNER: `sudo chown -R $USER:$USER ~/data`\
+\
 Essentially, I created a filesystem for the EBS volume and then mounted it do my `~/data` directory. To ensure, mount persistently, I also configured the `/etc/fstab/` so the volume mounts at boot.\
 
 After my EBS was mounted, I needed to create a Dockerfile to run Gitea. These are the commands I did step-by-step:
